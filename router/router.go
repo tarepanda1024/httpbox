@@ -22,6 +22,11 @@ import (
 
 func initRouter(r *gin.Engine) {
 
+	r.GET("/health", func(ctx *gin.Context) {
+		_, _ = ctx.Writer.WriteString("Health")
+		ctx.Writer.Flush()
+	})
+
 	r.GET("/echo", func(ctx *gin.Context) {
 		req := ctx.Request
 		_, _ = ctx.Writer.WriteString("Host: " + req.Host + "\n")

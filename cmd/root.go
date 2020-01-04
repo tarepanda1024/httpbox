@@ -14,7 +14,6 @@
 package cmd
 
 import (
-	"HttpBox/router"
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
@@ -24,9 +23,6 @@ var rootCmd = &cobra.Command{
 	Use:   "httpbox",
 	Short: "A box contains some useful http tool",
 	Long:  `HttpBox is a mock server provided some useful interfaces`,
-	Run: func(cmd *cobra.Command, args []string) {
-		router.StartServer(8080)
-	},
 }
 
 func Execute() {

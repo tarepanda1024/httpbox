@@ -9,7 +9,7 @@ import (
 func StartServer(port int) {
 	r := gin.Default()
 	initRouter(r)
-	if err := r.Run("127.0.0.1:" + strconv.Itoa(port)); err != nil {
+	if err := r.Run(":" + strconv.Itoa(port)); err != nil {
 		fmt.Println(err)
 	}
 }
